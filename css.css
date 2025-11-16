@@ -1,0 +1,349 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Arial", sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background: #8A2BE2;
+    color: white;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.3s ease;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #FFD700;
+}
+
+.hero {
+    background: linear-gradient(135deg, #85ea66 50%, rgba(60, 173, 207, 0.863) 100%);
+    color: white;
+    padding: 150px 0 100px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background: #e74c3c;
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.cta-button:hover {
+    background: #c0392b;
+}
+
+.features {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.pricing {
+    padding: 80px 0;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.pricing-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid #e0e0e0;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing-card:hover {
+    border-color: #3498db;
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 1rem 0;
+}
+
+.rainbow-frog-card {
+    background: linear-gradient(45deg, #ff0000, #ff8000, #ffff00, #00ff00, #00ffff, #0000ff, #8000ff, #ff0080, #ff0000);
+    background-size: 400% 400%;
+    animation: rainbow 3s ease infinite;
+    color: #000000;
+    border: none;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.rainbow-frog-card::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 8px;
+    z-index: -1;
+}
+
+.rainbow-frog-card:hover {
+    animation: rainbow 1s ease infinite, jump 0.6s ease;
+    transform: translateY(-25px) scale(1.08);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+.rainbow-frog-card h3,
+.rainbow-frog-card .price,
+.rainbow-frog-card ul {
+    position: relative;
+    z-index: 2;
+    color: #000000;
+}
+
+.rainbow-frog-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.rainbow-frog-card .price {
+    color: #e74c3c;
+    font-size: 2.8rem;
+}
+
+.rainbow-frog-card ul {
+    list-style: none;
+    margin: 1.5rem 0;
+}
+
+.rainbow-frog-card ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    color: #000000;
+}
+
+.rainbow-frog-card ul li:last-child {
+    border-bottom: none;
+}
+
+.rainbow-frog-card .cta-button {
+    position: relative;
+    z-index: 2;
+    color: white !important;
+    background: #e74c3c;
+}
+
+.rainbow-frog-card .cta-button:hover {
+    background: #c0392b;
+    color: white !important;
+}
+
+.frog-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #e74c3c;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transform: rotate(15deg);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 3;
+    text-align: center;
+    line-height: 1.2;
+    max-width: 120px;
+}
+
+@keyframes rainbow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes jump {
+    0% { transform: translateY(0) scale(1); }
+    25% { transform: translateY(-30px) scale(1.08); }
+    50% { transform: translateY(-25px) scale(1.06); }
+    75% { transform: translateY(-20px) scale(1.04); }
+    100% { transform: translateY(-25px) scale(1.08); }
+}
+
+.contact {
+    padding: 80px 0;
+    background: #2c3e50;
+    color: white;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+footer {
+    background: #4B0082;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #8A2BE2;
+        flex-direction: column;
+        padding: 1rem 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 0;
+        text-align: center;
+        padding: 0.5rem 0;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .rainbow-frog-card:hover {
+        transform: translateY(-15px) scale(1.05);
+    }
+
+    .frog-badge {
+        font-size: 0.7rem;
+        padding: 6px 10px;
+        max-width: 100px;
+    }
+}
