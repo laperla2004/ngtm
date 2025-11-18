@@ -18,7 +18,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
-
+/*
 const contactForm = document.getElementById('contactForm');
 contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
@@ -31,6 +31,7 @@ contactForm.addEventListener('submit', function(e) {
     alert('Спасибо! Ваше сообщение отправлено. Мы обязательно свяжемся с вами в ближайшее время.');
     contactForm.reset();
 });
+*/
 
 window.addEventListener('scroll', () => {
     const header = document.querySelector('header');
