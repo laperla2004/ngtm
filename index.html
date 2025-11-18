@@ -11,26 +11,27 @@
         <div class="container">
             <nav>
                 <div class="logo">Nigaphone</div>
-                <button class="menu-toggle">★</button>
+                <button class="menu-toggle" aria-label="Открыть меню">★</button>
                 <ul class="nav-links">
-                    <li><a href="#home">Основная</a></li>
-                    <li><a href="#features">Возможности, которые нельзя упустить</a></li>
-                    <li><a href="#pricing">Тарифы</a></li>
-                    <li><a href="#contact">Наши контакты</a></li>
+                    <li><a href="#home" class="nav-link">Основная</a></li>
+                    <li><a href="#features" class="nav-link">Возможности</a></li>
+                    <li><a href="#pricing" class="nav-link">Тарифы</a></li>
+                    <li><a href="#contacts" class="nav-link">Контакты</a></li>
+                    <li><a href="#contact-form" class="nav-link">Обратная связь</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="hero" id="home">
+    <section id="home" class="page-section hero active">
         <div class="container">
             <h1>Услуги связи к вашим услугам</h1>
             <p>Самые современные решения для вашего комфорта</p>
-            <a href="#contact" class="cta-button">Подключиться к нам</a>
+            <a href="#contact-form" class="cta-button nav-link">Связаться с нами</a>
         </div>
     </section>
 
-    <section class="features" id="features">
+    <section id="features" class="page-section features">
         <div class="container">
             <h2 class="section-title">Наши уникальные преимущества</h2>
             <div class="features-grid">
@@ -53,11 +54,15 @@
         </div>
     </section>
 
-    <section class="pricing" id="pricing">
+    <section id="pricing" class="page-section pricing">
         <div class="container">
             <h2 class="section-title">Наши уникальные тарифы</h2>
             <div class="pricing-grid">
                 <div class="pricing-card">
+                    <img src="https://raw.githubusercontent.com/laperla2004/nigaphone/main/images/fix.jpg"
+                         alt="Базовый максимум"
+                         class="plan-image"
+                         onerror="this.src='https://via.placeholder.com/120x120/3498db/white?text=Базовый'">
                     <h3>Базовый максимум</h3>
                     <div class="price">1 руб/мес</div>
                     <ul>
@@ -65,20 +70,30 @@
                         <li>Техническая поддержка</li>
                         <li>5GB хранилище</li>
                     </ul>
-                    <a href="#contact" class="cta-button">Выбрать</a>
+                    <a href="#contact-form" class="cta-button nav-link">Выбрать</a>
                 </div>
+                
                 <div class="pricing-card">
+                    <img src="https://raw.githubusercontent.com/laperla2004/nigaphone/main/images/f80.jpg"
+                         alt="Про тариф"
+                         class="plan-image"
+                         onerror="this.src='https://via.placeholder.com/120x120/e74c3c/white?text=Про'">
                     <h3>Про</h3>
                     <div class="price">2 руб/мес</div>
                     <ul>
                         <li>Доступны две страны мира</li>
-                        <li>Тех поддержка, но от специалистов с двумя высшими образованиями</li>
+                        <li>Тех поддержка от специалистов с двумя высшими образованиями</li>
                         <li>10GB хранилище</li>
                     </ul>
-                    <a href="#contact" class="cta-button">Выбрать</a>
+                    <a href="#contact-form" class="cta-button nav-link">Выбрать</a>
                 </div>
+                
                 <div class="pricing-card rainbow-frog-card">
                     <div class="frog-badge">9/10 стоматологов рекомендуют</div>
+                    <img src="https://raw.githubusercontent.com/laperla2004/nigaphone/129408d77cfa8a0812278bc57efa480a6708a000/images/frog.webp"
+                         alt="Лягушка-талисман"
+                         class="frog-image"
+                         onerror="this.src='https://via.placeholder.com/120x120/4CAF50/white?text=Лягушка'">
                     <h3>Лягушка - Путешественница</h3>
                     <div class="price">3e10 руб/мес</div>
                     <ul>
@@ -87,30 +102,61 @@
                         <li>Неограниченный интернет</li>
                         <li>+ Бесплатная доставка лягушки-талисмана</li>
                     </ul>
-                    <a href="#contact" class="cta-button">Выбрать</a>
+                    <a href="#contact-form" class="cta-button nav-link">Выбрать</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="contact" id="contact">
+    <section id="contacts" class="page-section contacts-page">
         <div class="container">
-            <h2 class="section-title">Ну давайте, свяжитесь с нами</h2>
-            <form class="contact-form" action="https://formspree.io/f/ТВОЙ_КОД_OT_FORMSPREE" method="POST">
-                <div class="form-group">
-                    <label for="name">Имя</label>
-                    <input type="text" id="name" name="name" required>
+            <div class="contacts-content">
+                <h2 class="section-title">Наши контакты</h2>
+                <div class="phone-info">
+                    📞 Наш телефон: <strong>223 322 322</strong>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
+                
+                <img src="https://raw.githubusercontent.com/laperla2004/nigaphone/main/images/phone.webp"
+                     alt="Телефон"
+                     class="phone-image"
+                     onerror="this.src='https://via.placeholder.com/400x300/4CAF50/white?text=Телефон+здесь+должен+быть'">
+                
+                <div class="contact-icons">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-icon">📍</div>
                 </div>
-                <div class="form-group">
-                    <label for="message">Сообщение</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
+                
+                <div class="contact-info">
+                    <p>📧 Email: contact@nigaphone.ru</p>
+                    <p>🕒 Время работы: Пн-Пт 18:00-19:00</p>
+                    <p>📍 Адрес: г. Москва, ул. Связная, д. 7</p>
                 </div>
-                <button type="submit" class="cta-button">Отправить</button>
-            </form>
+                <a href="#contact-form" class="cta-button nav-link" style="margin-top: 20px;">Написать нам</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-form" class="page-section contact-form-page">
+        <div class="container">
+            <div class="contact-form-container">
+                <h2 class="section-title">Ну давайте, свяжитесь с нами</h2>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">как тебя зовут</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Хочешь что-то сказать?</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Жми!</button>
+                </form>
+            </div>
         </div>
     </section>
 
