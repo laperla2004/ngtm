@@ -1,71 +1,88 @@
 const menuToggle = document.querySelector('.menu-toggle');
-const navLinks = document.querySelector('.nav-links');
+        const navLinks = document.querySelector('.nav-links');
+        const navLinksItems = document.querySelectorAll('.nav-link');
+        const pageSections = document.querySelectorAll('.page-section');
 
-menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-});
+        // Переключение мобильного меню
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+        // Навигация между страницами
+        navLinksItems.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                
+                // Скрыть все секции
+                pageSections.forEach(section => {
+                    section.classList.remove('active');
+                });
+                
+                // Показать целевую секцию
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.classList.add('active');
+                }
+                
+                // Закрыть мобильное меню
+                navLinks.classList.remove('active');
             });
-            navLinks.classList.remove('active');
-        }
-    });
-});
-/*
-const contactForm = document.getElementById('contactForm');
-contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        message: document.getElementById('message').value
-    };
-    console.log('Form submitted:', formData);
-    alert('Спасибо! Ваше сообщение отправлено. Мы обязательно свяжемся с вами в ближайшее время.');
-    contactForm.reset();
-});
-*/
+        });
 
-window.addEventListener('scroll', () => {
-    const header = document.querySelector('header');
-    if (window.scrollY > 100) {
-        header.style.background = 'rgba(138, 43, 226, 0.95)';
-        header.style.backdropFilter = 'blur(10px)';
-    } else {
-        header.style.background = '#8A2BE2';
-        header.style.backdropFilter = 'none';
-    }
-});
+        // Обработка формы
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value
+            };
+            console.log('Form submitted:', formData);
+            alert('Спасибо! Ваше сообщение отправлено. Мы свяжемся с вами в ближайшее время.');
+            contactForm.reset();
+        });
 
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
+        // Плавный скролл для хедера
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(138, 43, 226, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = '#8A2BE2';
+                header.style.backdropFilter = 'none';
+            }
+        });
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
+        // Анимации появления элементов
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-document.querySelectorAll('.feature-card, .pricing-card').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
-});
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
 
-const rainbowCard = document.querySelector('.rainbow-frog-card');
-rainbowCard.addEventListener('mouseenter', function() {
-    console.log('Лягушка-Путешественница активирована! 🐸');
-});
+        document.querySelectorAll('.feature-card, .pricing-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Анимация для лягушки
+        const rainbowCard = document.querySelector('.rainbow-frog-card');
+        rainbowCard.addEventListener('mouseenter', function() {
+            console.log('Лягушка-Путешественница активирована! 🐸');
+        });
+
+        // Инициализация - показать главную страницу
+        document.getElementById('home').classList.add('active');
